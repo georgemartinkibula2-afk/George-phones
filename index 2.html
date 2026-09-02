@@ -3,334 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Phone - Tanga</title>
+    <meta name="description" content="George Phones - Simu, accessories na matengenezo Tanga Mjini.">
+    <title>George Phones - Tanga Mjini</title>
 
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;<!DOCTYPE html>
-<html lang="sw">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        }
 
-<title>George Phones - Tanga</title>
-
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background: #f4f8ff;
-    color: #172033;
-}
-
-header {
-    background: #061b3a;
-    color: white;
-    padding: 20px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #19a7ff;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-}
-
-.hero {
-    background: linear-gradient(135deg, #061b3a, #087dcc);
-    color: white;
-    text-align: center;
-    padding: 90px 20px;
-}
-
-.hero h1 {
-    font-size: 50px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-.button {
-    display: inline-block;
-    background: #19a7ff;
-    color: white;
-    padding: 15px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-section {
-    padding: 60px 8%;
-    text-align: center;
-}
-
-h2 {
-    color: #061b3a;
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 30px 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-}
-
-.card h3 {
-    color: #087dcc;
-    margin-bottom: 12px;
-}
-
-.contact {
-    background: #061b3a;
-    color: white;
-}
-
-.contact h2 {
-    color: white;
-}
-
-.contact p {
-    font-size: 18px;
-    margin: 12px;
-}
-
-.whatsapp {
-    background: #25D366;
-    margin-top: 15px;
-}
-
-footer {
-    background: #020c1c;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-@media(max-width:600px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    nav a {
-        margin: 5px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <div class="logo">George Phones</div>
-
-    <nav>
-        <a href="#home">Mwanzo</a>
-        <a href="#huduma">Huduma</a>
-        <a href="#mawasiliano">Mawasiliano</a>
-    </nav>
-</header>
-
-<section class="hero" id="home">
-    <h1>George Phones</h1>
-
-    <p>
-        Wataalamu wa Matengenezo ya Simu - Tanga
-    </p>
-
-    <a class="button" href="#mawasiliano">
-        Wasiliana Nasi
-    </a>
-</section>
-
-<section id="huduma">
-
-    <h2>Huduma Zetu</h2>
-
-    <div class="services">
-
-        <div class="card">
-            <h3>📱 Screen Replacement</h3>
-            <p>
-                Tunabadilisha screen zilizovunjika
-                au kuharibika.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🔋 Battery Replacement</h3>
-            <p>
-                Tunabadilisha battery za simu
-                zilizochoka au kuharibika.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🔧 Hardware Repair</h3>
-            <p>
-                Tunatengeneza matatizo mbalimbali
-                ya hardware ya simu.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>💻 Software Repair</h3>
-            <p>
-                Tunasaidia matatizo ya software
-                na mfumo wa simu.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="contact" id="mawasiliano">
-
-    <h2>Wasiliana na George Phones</h2>
-
-    <p>📍 Tanga, Tanzania</p>
-
-    <p>📞 Tigo: 0670343880</p>
-
-    <p>📞 Vodacom: 0748320880</p>
-
-    <a class="button whatsapp"
-       href="https://wa.me/255670343880"
-       target="_blank">
-       💬 WhatsApp
-    </a>
-
-</section>
-
-<footer>
-    <p>
-        © 2026 George Phones - Tanga.
-        Haki zote zimehifadhiwa.
-    </p>
-</footer>
-
-</body>
-</html>
-
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background: #f4f8fc;
+            font-family: Arial, sans-serif;
+            background: #f4f8ff;
             color: #172033;
+            line-height: 1.6;
         }
 
         header {
-            background: #071a35;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #061b3a;
             color: white;
-            padding: 20px 8%;
+            padding: 16px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,.18);
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #20a4ff;
+            font-size: 25px;
+            font-weight: 800;
+            color: #ffd000;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             margin-left: 20px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #ffd000;
         }
 
         .hero {
-            background: linear-gradient(135deg, #071a35, #0878c9);
+            background:
+                radial-gradient(circle at 10% 30%, rgba(255,208,0,.22), transparent 30%),
+                linear-gradient(135deg, #061b3a, #087dcc);
             color: white;
             text-align: center;
-            padding: 90px 20px;
+            padding: 95px 20px;
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
+            font-size: clamp(40px, 7vw, 68px);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            color: #ffd000;
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: clamp(18px, 3vw, 23px);
             margin-bottom: 30px;
+        }
+
+        .tagline {
+            display: inline-block;
+            margin-bottom: 28px;
+            padding: 8px 16px;
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 999px;
         }
 
         .button {
             display: inline-block;
-            background: #20a4ff;
-            color: white;
+            background: #ffd000;
+            color: #061b3a;
             padding: 14px 25px;
-            border-radius: 8px;
+            border-radius: 9px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 800;
+            transition: .2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            opacity: .92;
         }
 
         section {
-            padding: 60px 8%;
+            padding: 65px 7%;
             text-align: center;
         }
 
         section h2 {
-            color: #071a35;
-            margin-bottom: 30px;
-            font-size: 32px;
+            color: #061b3a;
+            margin-bottom: 15px;
+            font-size: clamp(28px, 4vw, 38px);
+        }
+
+        .section-intro {
+            max-width: 700px;
+            margin: 0 auto 35px;
+        }
+
+        .poster-section {
+            background: white;
+        }
+
+        .poster {
+            width: 100%;
+            max-width: 700px;
+            display: block;
+            margin: 30px auto 0;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0,0,0,.18);
         }
 
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            gap: 22px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .card {
             background: white;
-            padding: 30px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 30px 22px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0,0,0,.08);
+            transition: .2s;
         }
 
-        .card h3 {
-            color: #0878c9;
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 38px;
             margin-bottom: 12px;
         }
 
+        .card h3 {
+            color: #087dcc;
+            margin-bottom: 10px;
+        }
+
+        .price-note {
+            margin: 25px auto;
+            max-width: 800px;
+            background: #fff7c7;
+            border-left: 5px solid #ffd000;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
         .contact {
-            background: #071a35;
+            background: #061b3a;
             color: white;
         }
 
@@ -338,35 +179,60 @@ footer {
             color: white;
         }
 
-        .contact p {
-            margin: 12px 0;
-            font-size: 18px;
+        .contact-box {
+            max-width: 700px;
+            margin: 25px auto 0;
+            background: rgba(255,255,255,.07);
+            padding: 30px;
+            border-radius: 16px;
         }
 
-        footer {
-            background: #041024;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        .contact p {
+            margin: 13px 0;
+            font-size: 19px;
+        }
+
+        .phone {
+            font-weight: 800;
+            color: #ffd000;
         }
 
         .whatsapp {
             background: #25D366;
+            color: white;
             margin-top: 15px;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 36px;
-            }
+        footer {
+            background: #020c1c;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
 
+        @media (max-width: 650px) {
             header {
                 flex-direction: column;
-                gap: 15px;
+                gap: 12px;
+                padding: 15px 5%;
+            }
+
+            nav {
+                text-align: center;
             }
 
             nav a {
-                margin: 5px;
+                display: inline-block;
+                margin: 4px 7px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 75px 18px;
+            }
+
+            section {
+                padding: 50px 5%;
             }
         }
     </style>
@@ -375,7 +241,7 @@ footer {
 <body>
 
 <header>
-    <div class="logo">Dr. Phone</div>
+    <div class="logo">GP | George Phones</div>
 
     <nav>
         <a href="#home">Mwanzo</a>
@@ -386,28 +252,87 @@ footer {
 </header>
 
 <section class="hero" id="home">
-    <h1>Dr. Phone</h1>
-    <p>Wataalamu wa Matengenezo ya Simu - Tanga</p>
+    <div class="tagline">QUALITY. TRUST. CONNECTION.</div>
+    <h1>George <span>Phones</span></h1>
+    <p>Phones • Accessories • Repairs — Tanga Mjini</p>
+
     <a class="button" href="#mawasiliano">Wasiliana Nasi</a>
 </section>
-    <section id="bei">
 
+<section class="poster-section">
+    <h2>Karibu George Phones</h2>
+    <p class="section-intro">
+        Huduma bora za simu, accessories na matengenezo kwa uaminifu.
+    </p>
+
+    <img
+        src="george-phones-poster.png"
+        alt="George Phones - Tanga Mjini"
+        class="poster"
+    >
+</section>
+
+<section id="huduma">
+    <h2>Huduma Zetu</h2>
+    <p class="section-intro">
+        Tunakusaidia kwenye matatizo mbalimbali ya simu na vifaa vyake.
+    </p>
+
+    <div class="services">
+        <div class="card">
+            <div class="icon">📱</div>
+            <h3>Screen Replacement</h3>
+            <p>Tunabadilisha screen zilizovunjika au kuharibika.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔋</div>
+            <h3>Battery Replacement</h3>
+            <p>Tunabadilisha battery zilizochoka au kuharibika.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔌</div>
+            <h3>Charging Port</h3>
+            <p>Tunasaidia kutengeneza matatizo ya charging port.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔧</div>
+            <h3>Hardware Repair</h3>
+            <p>Tunatengeneza matatizo mbalimbali ya hardware ya simu.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Software Repair</h3>
+            <p>Tunasaidia matatizo ya software na mfumo wa simu.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎧</div>
+            <h3>Accessories</h3>
+            <p>Accessories mbalimbali za simu zinapatikana.</p>
+        </div>
+    </div>
+</section>
+
+<section id="bei">
     <h2>Bei za Huduma</h2>
 
-    <p style="margin-bottom: 30px;">
+    <p class="section-intro">
         Bei hutegemea aina na model ya simu pamoja na ukubwa wa tatizo.
         Wasiliana nasi kwa bei sahihi.
     </p>
 
     <div class="services">
-
         <div class="card">
-            <h3>📱 Screen Replacement</h3>
+            <h3>📱 Screen</h3>
             <p>Bei hutegemea aina na model ya simu.</p>
         </div>
 
         <div class="card">
-            <h3>🔋 Battery Replacement</h3>
+            <h3>🔋 Battery</h3>
             <p>Bei hutegemea aina na model ya simu.</p>
         </div>
 
@@ -417,68 +342,53 @@ footer {
         </div>
 
         <div class="card">
-            <h3>💻 Software Repair</h3>
+            <h3>💻 Software</h3>
             <p>Bei hutegemea tatizo la simu.</p>
         </div>
-
     </div>
 
-    <br>
+    <div class="price-note">
+        <strong>Unataka kujua bei?</strong><br>
+        Bonyeza WhatsApp hapa chini utuambie model ya simu yako.
+    </div>
 
-    <a class="button whatsapp"
-       href="https://wa.me/255670343880?text=Habari%20George%20Phones%2C%20naomba%20kujua%20bei%20ya%20kutengeneza%20simu."
-       target="_blank">
-       💬 Uliza Bei WhatsApp
+    <a
+        class="button whatsapp"
+        href="https://wa.me/255670343880?text=Habari%20George%20Phones%2C%20naomba%20kujua%20bei%20ya%20kutengeneza%20simu."
+        target="_blank"
+        rel="noopener"
+    >
+        💬 Uliza Bei WhatsApp
     </a>
-
-</section>
-
-
-<section id="huduma">
-    <h2>Huduma Zetu</h2>
-
-    <div class="services">
-
-        <div class="card">
-            <h3>📱 Screen Replacement</h3>
-            <p>Tunabadilisha screen zilizovunjika au kuharibika.</p>
-        </div>
-
-        <div class="card">
-            <h3>🔋 Battery</h3>
-            <p>Tunabadilisha battery za simu zinazochoka au kuharibika.</p>
-        </div>
-
-        <div class="card">
-            <h3>🔧 Matengenezo</h3>
-            <p>Tunatengeneza matatizo mbalimbali ya hardware ya simu.</p>
-        </div>
-
-        <div class="card">
-            <h3>💻 Software</h3>
-            <p>Tunasaidia matatizo ya software na mfumo wa simu.</p>
-        </div>
-
-    </div>
 </section>
 
 <section class="contact" id="mawasiliano">
-    <h2>Wasiliana na Dr. Phone</h2>
+    <h2>Wasiliana na George Phones</h2>
 
-    <p>📍 Tanga, Tanzania</p>
+    <div class="contact-box">
+        <p>📍 <strong>Tanga Mjini, Tanzania</strong></p>
 
-    <p>📞 Tigo: 0670343880</p>
-    <p>📞 Vodacom: 0748320880</p>
+        <p>📞 Tigo:
+            <span class="phone">0670343880</span>
+        </p>
 
-    <a class="button whatsapp"
-       href="https://wa.me/255670343880"
-       target="_blank">
-       💬 Tuwasiliane WhatsApp
-    </a>
+        <p>📞 Vodacom:
+            <span class="phone">0748320880</span>
+        </p>
+
+        <a
+            class="button whatsapp"
+            href="https://wa.me/255670343880"
+            target="_blank"
+            rel="noopener"
+        >
+            💬 Tuwasiliane WhatsApp
+        </a>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 Dr. Phone - Tanga. Haki zote zimehifadhiwa.</p>
+    <p>© 2026 George Phones - Tanga Mjini. Haki zote zimehifadhiwa.</p>
 </footer>
 
 </body>
