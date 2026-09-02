@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Phone - Tanga</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f8fc;
+            color: #172033;
+        }
+
+        header {
+            background: #071a35;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #20a4ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071a35, #0878c9);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #20a4ff;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            color: #071a35;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: #0878c9;
+            margin-bottom: 12px;
+        }
+
+        .contact {
+            background: #071a35;
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact p {
+            margin: 12px 0;
+            font-size: 18px;
+        }
+
+        footer {
+            background: #041024;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .whatsapp {
+            background: #25D366;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Dr. Phone</div>
+
+    <nav>
+        <a href="#home">Mwanzo</a>
+        <a href="#huduma">Huduma</a>
+        <a href="#mawasiliano">Mawasiliano</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Dr. Phone</h1>
+    <p>Wataalamu wa Matengenezo ya Simu - Tanga</p>
+    <a class="button" href="#mawasiliano">Wasiliana Nasi</a>
+</section>
+
+<section id="huduma">
+    <h2>Huduma Zetu</h2>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>📱 Screen Replacement</h3>
+            <p>Tunabadilisha screen zilizovunjika au kuharibika.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔋 Battery</h3>
+            <p>Tunabadilisha battery za simu zinazochoka au kuharibika.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔧 Matengenezo</h3>
+            <p>Tunatengeneza matatizo mbalimbali ya hardware ya simu.</p>
+        </div>
+
+        <div class="card">
+            <h3>💻 Software</h3>
+            <p>Tunasaidia matatizo ya software na mfumo wa simu.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="contact" id="mawasiliano">
+    <h2>Wasiliana na Dr. Phone</h2>
+
+    <p>📍 Tanga, Tanzania</p>
+
+    <p>📞 Tigo: 0670343880</p>
+    <p>📞 Vodacom: 0748320880</p>
+
+    <a class="button whatsapp"
+       href="https://wa.me/255670343880"
+       target="_blank">
+       💬 Tuwasiliane WhatsApp
+    </a>
+</section>
+
+<footer>
+    <p>© 2026 Dr. Phone - Tanga. Haki zote zimehifadhiwa.</p>
+</footer>
+
+</body>
+</html>
