@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="George Phones - Simu, accessories na matengenezo Tanga Mjini.">
+    <title>George Phones - Tanga Mjini</title>
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8ff;
+            color: #172033;
+            line-height: 1.6;
+            transition: background .25s, color .25s;
+        }
+        body.dark { background:#0b1220; color:#e9eef8; }
+        header {
+            position: sticky; top: 0; z-index: 1000;
+            background:#061b3a; color:white; padding:14px 6%;
+            display:flex; justify-content:space-between; align-items:center;
+            gap:18px; box-shadow:0 3px 15px rgba(0,0,0,.18);
+        }
+        .logo { font-size:25px; font-weight:800; color:#ffd000; white-space:nowrap; }
+        nav { display:flex; align-items:center; flex-wrap:wrap; justify-content:center; }
+        .menu-btn { display:none; border:0; background:#17355e; color:white; padding:9px 12px; border-radius:9px; cursor:pointer; font-size:20px; }
+        nav a { color:white; text-decoration:none; margin:4px 9px; font-weight:600; }
+        nav a:hover { color:#ffd000; }
+        .header-tools { display:flex; align-items:center; gap:8px; }
+        .tool-btn { border:0; background:#17355e; color:white; padding:9px 12px; border-radius:9px; cursor:pointer; }
+        .hero {
+            background:radial-gradient(circle at 10% 30%,rgba(255,208,0,.22),transparent 30%),linear-gradient(135deg,#061b3a,#087dcc);
+            color:white; text-align:center; padding:85px 20px;
+        }
+        .hero h1 { font-size:clamp(40px,7vw,68px); margin-bottom:12px; letter-spacing:1px; }
+        .hero h1 span { color:#ffd000; }
+        .hero p { font-size:clamp(18px,3vw,23px); margin-bottom:28px; }
+        .tagline { display:inline-block; margin-bottom:25px; padding:8px 16px; border:1px solid rgba(255,255,255,.35); border-radius:999px; }
+        .button { display:inline-block; background:#ffd000; color:#061b3a; padding:13px 22px; border-radius:9px; text-decoration:none; font-weight:800; transition:.2s; border:0; cursor:pointer; }
+        .button:hover { transform:translateY(-2px); opacity:.92; }
+        .button.whatsapp { background:#25D366; color:white; }
+        .button.call { background:#ffd000; color:#061b3a; }
+        .hero-actions { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+        section { padding:65px 6%; text-align:center; }
+        section h2 { color:#061b3a; margin-bottom:15px; font-size:clamp(28px,4vw,38px); }
+        body.dark section h2 { color:#ffd000; }
+        .section-intro { max-width:760px; margin:0 auto 35px; }
+        .poster-section { background:white; }
+        body.dark .poster-section, body.dark .card, body.dark .search-box { background:#111b2d; }
+        .poster, .catalog-image { width:100%; display:block; margin:30px auto 0; border-radius:16px; box-shadow:0 10px 35px rgba(0,0,0,.16); }
+        .poster { max-width:700px; }
+        .catalog-image { max-width:1100px; }
+        .search-box { max-width:700px; margin:0 auto 30px; background:white; padding:10px; border-radius:12px; box-shadow:0 5px 18px rgba(0,0,0,.08); display:flex; gap:8px; }
+        .search-box input { width:100%; border:0; outline:0; padding:12px; font-size:16px; background:transparent; color:inherit; }
+        .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:22px; max-width:1150px; margin:0 auto; }
+        .card { background:white; padding:28px 20px; border-radius:15px; box-shadow:0 5px 18px rgba(0,0,0,.08); transition:.2s; }
+        .card:hover { transform:translateY(-5px); }
+        .icon { font-size:38px; margin-bottom:12px; }
+        .card h3 { color:#087dcc; margin-bottom:10px; }
+        body.dark .card h3 { color:#ffd000; }
+        .card .small-btn { display:inline-block; margin-top:15px; background:#061b3a; color:white; padding:9px 13px; border-radius:8px; text-decoration:none; font-weight:700; }
+        .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; max-width:1100px; margin:0 auto; }
+        .gallery figure { background:white; cursor:pointer; border-radius:14px; overflow:hidden; box-shadow:0 5px 18px rgba(0,0,0,.08); }
+        body.dark .gallery figure { background:#111b2d; }
+        .gallery img { width:100%; display:block; aspect-ratio:4/3; object-fit:cover; }
+        .gallery figcaption { padding:12px; font-weight:700; }
+        .review-note { max-width:800px; margin:0 auto; padding:20px; border-radius:14px; background:#fff7c7; border-left:5px solid #ffd000; }
+        body.dark .review-note { background:#2a2819; }
+        .price-note { margin:25px auto; max-width:800px; background:#fff7c7; border-left:5px solid #ffd000; padding:16px; border-radius:8px; }
+        body.dark .price-note { background:#2a2819; }
+        .contact { background:#061b3a; color:white; }
+        .contact h2 { color:white; }
+        .contact-layout { max-width:1100px; margin:25px auto 0; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+        .contact-box, .form-box { background:rgba(255,255,255,.07); padding:28px; border-radius:16px; }
+        .contact p { margin:13px 0; font-size:18px; }
+        .phone { font-weight:800; color:#ffd000; }
+        .form-box input, .form-box textarea { width:100%; margin-bottom:12px; padding:13px; border:0; border-radius:8px; font:inherit; }
+        .form-box textarea { min-height:120px; resize:vertical; }
+        .hours { margin-top:18px; padding-top:18px; border-top:1px solid rgba(255,255,255,.2); }
+        .map-link { margin-top:18px; display:inline-block; color:#ffd000; font-weight:800; }
+        footer { background:#020c1c; color:white; text-align:center; padding:22px; }
+        .floating { position:fixed; right:18px; bottom:18px; z-index:1200; display:flex; flex-direction:column; gap:10px; }
+        .float-btn { width:54px; height:54px; border-radius:50%; display:grid; place-items:center; color:white; text-decoration:none; font-size:24px; box-shadow:0 5px 18px rgba(0,0,0,.25); }
+        .float-wa { background:#25D366; }
+        .float-call { background:#ffd000; color:#061b3a; }
+        .top-btn { background:#17355e; border:0; cursor:pointer; }
+        .hidden { display:none !important; }
+        .lightbox { position:fixed; inset:0; background:rgba(0,0,0,.88); z-index:2000; display:none; align-items:center; justify-content:center; padding:25px; }
+        .lightbox.show { display:flex; }
+        .lightbox img { max-width:95vw; max-height:90vh; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,.4); }
+        .lightbox-close { position:absolute; top:15px; right:20px; width:45px; height:45px; border:0; border-radius:50%; background:white; color:#061b3a; font-size:32px; cursor:pointer; }
+        @media (max-width:850px) {
+            header { flex-direction:column; }
+            .contact-layout { grid-template-columns:1fr; }
+        }
+        @media (max-width:650px) {
+            nav a { margin:3px 5px; font-size:13px; }
+            .hero { padding:65px 18px; }
+            section { padding:50px 5%; }
+            .logo { font-size:22px; }
+            header { flex-direction:row; padding:12px 5%; }
+            nav { display:none; width:100%; background:#061b3a; padding:8px 0; }
+            nav.open { display:flex; }
+            nav a { width:100%; text-align:center; padding:8px; }
+            .menu-btn { display:block; }
+            .header-tools { margin-left:auto; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">GP | George Phones</div>
+    <nav>
+        <a href="#home">Mwanzo</a>
+        <a href="#huduma">Huduma</a>
+        <a href="#bidhaa">Bidhaa</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#bei">Bei</a>
+        <a href="#mawasiliano">Mawasiliano</a>
+    </nav>
+    <div class="header-tools">
+        <button class="tool-btn" onclick="toggleDark()" aria-label="Badili Dark Mode" id="darkBtn">🌙</button>
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Fungua menu">☰</button>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="tagline">QUALITY. TRUST. CONNECTION.</div>
+    <h1>George <span>Phones</span></h1>
+    <p>Phones • Accessories • Repairs — Tanga Mjini</p>
+    <div class="hero-actions">
+        <a class="button call" href="tel:+255670343880">📞 Piga Sasa</a>
+        <a class="button whatsapp" href="https://wa.me/255670343880" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+</section>
+
+<section class="poster-section">
+    <h2>Karibu George Phones</h2>
+    <p class="section-intro">Huduma bora za simu, accessories na matengenezo kwa uaminifu.</p>
+    <img src="george-phones-poster.png" alt="George Phones - Tanga Mjini" class="poster">
+</section>
+
+<section id="bidhaa">
+    <h2>Bidhaa Zetu</h2>
+    <p class="section-intro">Angalia aina za bidhaa. Wasiliana nasi kuthibitisha stock na bei.</p>
+    <div class="search-box">
+        <input id="searchInput" type="search" placeholder="🔎 Tafuta bidhaa au huduma..." oninput="filterCards()">
+    </div>
+    <div class="grid searchable">
+        <div class="card product"><div class="icon">📱</div><h3>Simu</h3><p>Simu mpya na second hand bora.</p><a class="small-btn" href="https://wa.me/255670343880?text=Habari%20George%20Phones%2C%20naomba%20kujua%20simu%20zilizopo." target="_blank">Tazama Bidhaa</a></div>
+        <div class="card product"><div class="icon">🔋</div><h3>Betri</h3><p>Betri za simu za aina mbalimbali.</p><a class="small-btn" href="https://wa.me/255670343880?text=Naomba%20kujua%20betri%20zilizopo." target="_blank">Tazama Bidhaa</a></div>
+        <div class="card product"><div class="icon">🔌</div><h3>Chargers</h3><p>Chaja na cables za charging.</p><a class="small-btn" href="https://wa.me/255670343880?text=Naomba%20kujua%20chargers%20zilizopo." target="_blank">Tazama Bidhaa</a></div>
+        <div class="card product"><div class="icon">🎧</div><h3>Earphones</h3><p>Earphones za aina mbalimbali.</p><a class="small-btn" href="https://wa.me/255670343880?text=Naomba%20kujua%20earphones%20zilizopo." target="_blank">Tazama Bidhaa</a></div>
+        <div class="card product"><div class="icon">🛡️</div><h3>Covers</h3><p>Covers za simu zenye muonekano mzuri.</p><a class="small-btn" href="https://wa.me/255670343880?text=Naomba%20kujua%20covers%20zilizopo." target="_blank">Tazama Bidhaa</a></div>
+        <div class="card product"><div class="icon">🖥️</div><h3>Screen Protectors</h3><p>Screen protectors kwa simu mbalimbali.</p><a class="small-btn" href="https://wa.me/255670343880?text=Naomba%20kujua%20screen%20protectors%20zilizopo." target="_blank">Tazama Bidhaa</a></div>
+        <div class="card product"><div class="icon">💾</div><h3>Memory Cards</h3><p>Memory cards kwa uhifadhi wa data.</p><a class="small-btn" href="https://wa.me/255670343880?text=Naomba%20kujua%20memory%20cards%20zilizopo." target="_blank">Tazama Bidhaa</a></div>
+    </div>
+    <img src="george-phones-catalog.png" alt="Catalog ya George Phones" class="catalog-image">
+</section>
+
+<section id="gallery">
+    <h2>Gallery</h2>
+    <p class="section-intro">Hizi ni picha za mfano kwa sasa. Tutaziweka picha halisi za duka na kazi zako ukizipata.</p>
+    <div class="gallery">
+        <figure onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)"><img src="george-phones-poster.png" alt="George Phones poster"><figcaption>George Phones</figcaption></figure>
+        <figure onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)"><img src="george-phones-catalog.png" alt="Bidhaa za George Phones"><figcaption>Bidhaa Zetu</figcaption></figure>
+        <figure onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)"><img src="george-phones-catalog.png" alt="Accessories za simu"><figcaption>Accessories</figcaption></figure>
+        <figure onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)"><img src="george-phones-catalog.png" alt="Huduma za matengenezo"><figcaption>Matengenezo ya Simu</figcaption></figure>
+    </div>
+</section>
+
+<section id="huduma">
+    <h2>Huduma Zetu</h2>
+    <p class="section-intro">Tunasaidia kwenye matatizo mbalimbali ya simu na vifaa vyake.</p>
+    <div class="grid searchable">
+        <div class="card service"><div class="icon">📱</div><h3>Screen Replacement</h3><p>Tunabadilisha screen zilizovunjika au kuharibika.</p></div>
+        <div class="card service"><div class="icon">🔋</div><h3>Battery Replacement</h3><p>Tunabadilisha battery zilizochoka au kuharibika.</p></div>
+        <div class="card service"><div class="icon">🔌</div><h3>Charging Port</h3><p>Tunasaidia kutengeneza matatizo ya charging port.</p></div>
+        <div class="card service"><div class="icon">🔧</div><h3>Hardware Repair</h3><p>Tunatengeneza matatizo mbalimbali ya hardware.</p></div>
+        <div class="card service"><div class="icon">💻</div><h3>Software Repair</h3><p>Tunasaidia matatizo ya software na mfumo wa simu.</p></div>
+        <div class="card service"><div class="icon">🎧</div><h3>Accessories</h3><p>Accessories mbalimbali za simu zinapatikana.</p></div>
+    </div>
+</section>
+
+<section id="reviews">
+    <h2>Reviews za Wateja</h2>
+    <p class="section-intro">Sehemu hii tutaweka maoni halisi ya wateja wako kadri yanavyopatikana.</p>
+    <div class="review-note">⭐ <strong>Maoni ya wateja yataonekana hapa.</strong><br>Usitumie reviews za mfano kama ushuhuda wa kweli; tutaziweka baada ya kupata maoni halisi.</div>
+</section>
+
+<section id="bei">
+    <h2>Bei za Huduma</h2>
+    <p class="section-intro">Bei hutegemea aina na model ya simu pamoja na ukubwa wa tatizo. Wasiliana nasi kwa bei sahihi.</p>
+    <div class="grid searchable">
+        <div class="card"><h3>📱 Screen</h3><p>Bei hutegemea aina na model ya simu.</p></div>
+        <div class="card"><h3>🔋 Battery</h3><p>Bei hutegemea aina na model ya simu.</p></div>
+        <div class="card"><h3>🔌 Charging Port</h3><p>Bei hutegemea aina ya simu na tatizo.</p></div>
+        <div class="card"><h3>💻 Software</h3><p>Bei hutegemea tatizo la simu.</p></div>
+    </div>
+    <div class="price-note"><strong>Unataka kujua bei?</strong><br>Bonyeza WhatsApp utuambie model ya simu yako.</div>
+    <a class="button whatsapp" href="https://wa.me/255670343880?text=Habari%20George%20Phones%2C%20naomba%20kujua%20bei%20ya%20kutengeneza%20simu." target="_blank" rel="noopener">💬 Uliza Bei WhatsApp</a>
+</section>
+
+<section class="contact" id="mawasiliano">
+    <h2>Wasiliana na George Phones</h2>
+    <div class="contact-layout">
+        <div class="contact-box">
+            <p>📍 <strong>Tanga Mjini, Tanzania</strong></p>
+            <p>📞 Tigo: <span class="phone">0670343880</span></p>
+            <p>📞 Vodacom: <span class="phone">0748320880</span></p>
+            <div class="hours">
+                <h3>🕐 Masaa ya Kazi</h3>
+                <p>Jumatatu – Jumamosi: 8:00 AM – 7:00 PM</p>
+                <p>Jumapili: 10:00 AM – 4:00 PM</p>
+                <small>*Badilisha muda huu kama muda halisi wa George Phones ni tofauti.</small>
+            </div>
+            <a class="button whatsapp" href="https://wa.me/255670343880" target="_blank" rel="noopener">💬 WhatsApp Sasa</a>
+            <a class="button call" href="tel:+255670343880">📞 Piga Sasa</a>
+            <br>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=George+Phones+Tanga+Mjini" target="_blank" rel="noopener">📍 Fungua George Phones kwenye Google Maps</a>
+        </div>
+        <div class="form-box">
+            <h3>✉️ Tuma Ujumbe</h3>
+            <p style="margin:8px 0 18px;">Fomu hii itafungua WhatsApp yako na ujumbe uliouandika.</p>
+            <form onsubmit="sendToWhatsApp(event)">
+                <input id="name" required placeholder="Jina lako">
+                <input id="number" placeholder="Namba yako ya simu">
+                <textarea id="message" required placeholder="Ujumbe wako..."></textarea>
+                <button class="button whatsapp" type="submit">Tuma WhatsApp</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer><p>© 2026 George Phones - Tanga Mjini. Haki zote zimehifadhiwa.</p></footer>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Funga picha">×</button>
+    <img id="lightboxImg" src="" alt="">
+</div>
+
+<div class="floating">
+    <a class="float-btn float-wa" href="https://wa.me/255670343880" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+    <a class="float-btn float-call" href="tel:+255670343880" aria-label="Piga simu">📞</a>
+    <button class="float-btn top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Rudi juu">↑</button>
+</div>
+
+<script>
+    function toggleDark() {
+        document.body.classList.toggle('dark');
+        localStorage.setItem('georgeDark', document.body.classList.contains('dark') ? '1' : '0');
+        updateDarkButton();
+    }
+    function updateDarkButton() {
+        const btn = document.getElementById('darkBtn');
+        if (btn) btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    }
+    function toggleMenu() {
+        document.querySelector('nav').classList.toggle('open');
+    }
+    document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => document.querySelector('nav').classList.remove('open')));
+    if (localStorage.getItem('georgeDark') === '1') document.body.classList.add('dark');
+    updateDarkButton();
+
+    function openLightbox(src, alt) {
+        const box = document.getElementById('lightbox');
+        const img = document.getElementById('lightboxImg');
+        img.src = src;
+        img.alt = alt || 'George Phones';
+        box.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(event) {
+        if (event && event.target && event.target.id === 'lightboxImg') return;
+        document.getElementById('lightbox').classList.remove('show');
+        document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    function filterCards() {
+        const q = document.getElementById('searchInput').value.toLowerCase().trim();
+        document.querySelectorAll('.searchable .card').forEach(card => {
+            card.classList.toggle('hidden', q && !card.innerText.toLowerCase().includes(q));
+        });
+    }
+
+    function sendToWhatsApp(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const number = document.getElementById('number').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const text = `Habari George Phones, mimi ni ${name}. Namba yangu: ${number || 'sijaweka'}. Ujumbe: ${message}`;
+        window.open('https://wa.me/255670343880?text=' + encodeURIComponent(text), '_blank');
+    }
+</script>
+
+</body>
+</html>
